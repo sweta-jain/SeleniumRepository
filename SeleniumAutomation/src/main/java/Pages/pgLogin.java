@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import Utils.Log;
+
 public class pgLogin {
 	WebDriver wDriver;
 		
@@ -33,16 +35,19 @@ public class pgLogin {
 	
 	public  void enterUserEmail(String sUserEmail)
 	{
+		Log.info(" Entering User Name");
 		findUserEmailBox().sendKeys(sUserEmail);
 	}
 	
 	public void enterUserPassword(String sUserPassword)
 	{
+		Log.info(" Entering Password");
 		findUserPasswordBox().sendKeys(sUserPassword);
 	}
 	
 	public void authenticateUser()
 	{
+		Log.info(" Login Button Clicked");
 		findLoginButton().click();
 	}
 }
