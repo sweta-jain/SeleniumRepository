@@ -27,6 +27,6 @@
 	    <artifactId>testng</artifactId>
 	    <version>7.12.0</version>
 	    <scope>test</scope>
-	</dependency>
+	</dependency>	
   </dependencies>
 </project>

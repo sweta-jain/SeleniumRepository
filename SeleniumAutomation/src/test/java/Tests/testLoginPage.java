@@ -17,7 +17,7 @@ public class testLoginPage extends BaseClass{
 		loginPg.authenticateUser();
 		
 		System.out.println("Page Title is : " +	wDriver.getTitle());
-		Assert.assertEquals(wDriver.getTitle(), "Just a moment...");
+		Assert.assertEquals(wDriver.getTitle(), "Dashboard / nopCommerce administration");
 	}
 
 }
