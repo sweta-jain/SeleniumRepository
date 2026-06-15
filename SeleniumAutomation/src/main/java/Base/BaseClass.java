@@ -1,5 +1,6 @@
 package Base;
 
+import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
+import Utils.EmailUtil;
 import Utils.ExtentReportsManager;
 import Utils.Log;
 
@@ -31,6 +33,7 @@ public class BaseClass {
 	@AfterSuite
 	public void tearDownReport() {
 		extentReport.flush();
+		EmailUtil.sendEmail(new File(ExtentReportsManager.reportPath));		
 	}
 	
 	@BeforeMethod

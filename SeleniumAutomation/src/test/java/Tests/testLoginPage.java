@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Base.BaseClass;
@@ -32,7 +33,19 @@ public class testLoginPage extends BaseClass{
 		 return data;
 	}
 	
-	@Test(dataProvider = "LoginData")
+	@DataProvider(name="LoginData1")
+	public Object[][] getLoginData1()
+	{			
+		 return new Object[][] {
+			 //{"user1", "user123"},
+			 //{"user2", "user234"},
+			 {"admin@yourstore.com", "admin"}
+		 };		 
+	}
+	
+	@Test(dataProvider = "LoginData1")
+	//@Test
+	//@Parameters({"username", "password"})
 	public void testAuthenticateUser(String username, String password) {
 		Log.info("Starting Login Test");
 		extentTest = new ExtentReportsManager().createTest("Login Test");
